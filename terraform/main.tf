@@ -43,4 +43,7 @@ resource "aws_glue_catalog_database" "domains" {
     Environment = var.environment
     ManagedBy   = "Terraform"
   }
+  lifecycle {
+    ignore_changes = [tags, tags_all]
+  }
 }
